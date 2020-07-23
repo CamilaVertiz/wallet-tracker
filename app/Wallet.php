@@ -1,0 +1,14 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Wallet extends Model
+{   
+    protected $table = 'wallets';
+
+    public function transfers(){
+        return $this->hasMany('App\Transfer', 'wallet_id');
+    }
+}
