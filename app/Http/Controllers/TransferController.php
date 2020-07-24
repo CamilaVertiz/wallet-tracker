@@ -27,4 +27,24 @@ class TransferController extends Controller
             'wallet_id'=>$transfer->wallet_id 
         ], 201);
     }
+
+    public function delete(Request $request){
+        $input = $request->all();
+
+        $transfer = Transfer::find($input['id']);
+
+        $wallet = Wallet::find($transfer->wallet_id);
+        $wallet->money = $wallet->money - abs($transfer->amount);
+        $wallet->update();
+
+        $transfer->delete();
+        
+        $transfers = $wallet->transfers()->get();
+        return response()->json([
+            'money' => $wallet->money, 
+            'message' => 'Record deleted!', 
+            'transfers' => $transfers
+        ], 201);
+    }
+
 }

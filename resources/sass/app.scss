@@ -3,6 +3,86 @@
 
 // Variables
 @import 'variables';
+$fa-font-path: "../webfonts";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.delete{
+    cursor: pointer;
+}
+
+.errorMessage{
+    margin: 25px auto;
+    max-width: 300px;
+    background: #a8f2c7;
+    padding: 30px;
+    border-radius: 8px;
+    color: #625656;
+    position: absolute;
+    left: 0;
+    right: 0;
+} 
+
+.errorMessage span{    
+     font-size: 25px;
+}
+
+.errorMessage .close{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
